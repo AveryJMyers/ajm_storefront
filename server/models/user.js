@@ -3,7 +3,15 @@ const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 
-UserActivation.init(
+class User extends Model {
+    checkPassword(loginPw){
+        return bcrypt.compareSync(loginPw, this.password)
+    }
+}
+
+
+
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -24,7 +32,7 @@ UserActivation.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [4],
+                len: [1],
             },
         },
     },
