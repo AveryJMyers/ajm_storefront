@@ -30,7 +30,8 @@ User.init(
         },
         firstName:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: true,
+            default: 'John Doe',
             validate: {
                 len: [0,10],
             },
