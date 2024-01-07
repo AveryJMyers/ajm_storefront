@@ -28,6 +28,13 @@ User.init(
                 len: [0,50] // Adjust the length as needed
             },
         },
+        firstName:{
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [0,10],
+            },
+        },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
