@@ -28,14 +28,14 @@ User.init(
                 len: [0,50] // Adjust the length as needed
             },
         },
-        firstName:{
-            type: DataTypes.STRING,
-            allowNull: true,
-            default: 'John Doe',
-            validate: {
-                len: [0,10],
-            },
-        },
+        // firstName:{
+        //     type: DataTypes.STRING,
+        //     allowNull: true,
+        //     default: 'John Doe',
+        //     validate: {
+        //         len: [0,10],
+        //     },
+        // },
         password: {
             type: DataTypes.STRING,
             allowNull: false,
