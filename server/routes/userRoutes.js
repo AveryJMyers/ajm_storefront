@@ -5,7 +5,7 @@ const User = require("../models/user")
 router.get('/all', async (req, res) => {
     try {
         const usersData = await User.findAll({
-            attributes: ['id', 'email', /* other attributes */],
+            attributes: ['id', 'email', 'password' /* other attributes */],
         });
 
         const users = usersData.map(user => user.get({ plain: true }));
@@ -33,6 +33,7 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: "Incorrect email or password, please try again." });
             return;
         }
+        res.status(200).json({ message: 'Login Succesful'})
     }catch(err){
         console.error(err);
         res.status(500).json(err);
