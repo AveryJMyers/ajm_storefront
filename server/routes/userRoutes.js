@@ -17,6 +17,11 @@ router.get('/all', async (req, res) => {
     }
 });
 
+
+//create user
+
+
+
 router.post('/login', async (req, res) => {
     try{
         const userData = await User.findOne({
